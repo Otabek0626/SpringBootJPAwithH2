@@ -14,5 +14,12 @@
 		<button type="submit">Submit</button>
 		
 	</form>
+	
+	<form action="getAlien">
+		<input type="number" name="id"><br>
+		<button type="submit">Submit</button>
+		
+	</form>
+	
 </body>
 </html>
