@@ -1,6 +1,7 @@
 package com.SpringBootJpaH2.demo;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,9 +43,9 @@ public class AlienController {
 	
 	@RequestMapping("/aliens")
 	@ResponseBody
-	public String getAliens() {
+	public List<Alien> getAliens() {
 		
-		return repo.findAll().toString();
+		return repo.findAll();
 	}
 	
 	@RequestMapping("/alien/1")
@@ -57,8 +58,11 @@ public class AlienController {
 	
 	@RequestMapping("/alien/{id}")
 	@ResponseBody
-	public String getAlien(@PathVariable int id) {
+	public Optional<Alien> getAlien(@PathVariable int id) {
 		
-		return repo.findById(id).toString();
+		return repo.findById(id);
 	}
+	
+	
+	
 }
