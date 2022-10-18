@@ -33,7 +33,7 @@ public class AlienController {
 		
 		
 		ModelAndView mv = new ModelAndView("showData.jsp");
-		List<Alien> aliens = repo.findByName(name);
+		List<Alien> aliens = repo.findByNameSorted(name);
 		mv.addObject("aliens", aliens);
 		return mv;
 	}
