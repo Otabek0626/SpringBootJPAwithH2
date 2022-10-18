@@ -16,7 +16,7 @@
 	</form>
 	
 	<form action="getAlien">
-		<input type="number" name="id"><br>
+		<input type="text" name="name"><br>
 		<button type="submit">Submit</button>
 		
 	</form>

@@ -1,5 +1,7 @@
 package com.SpringBootJpaH2.demo;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,12 +29,12 @@ public class AlienController {
 	}
 	
 	@RequestMapping("/getAlien")
-	public ModelAndView getAlien(@RequestParam("id") int id) {
+	public ModelAndView getAlien(@RequestParam("name") String name) {
 		
 		
 		ModelAndView mv = new ModelAndView("showData.jsp");
-		Alien alien = repo.findById(id).orElse(null);
-		mv.addObject("alien", alien);
+		List<Alien> aliens = repo.findByName(name);
+		mv.addObject("aliens", aliens);
 		return mv;
 	}
 }
